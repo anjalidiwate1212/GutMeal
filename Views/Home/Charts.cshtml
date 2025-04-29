@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Charts";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/charts.css" />
+}
+<body>
+    <div class="container">
+        <div class="info-section"><h2 style="font-weight: bold; text-align: center;">Interactive Charts</h2></div>
+
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/charts.js"></script>
+}

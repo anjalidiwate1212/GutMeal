@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+@model GutMeal_Website.Models.UserDetails
+@section Styles {
+    <link rel="stylesheet" href="~/css/Create.css" />
+}
+
+<div class="info-section">
+    <h2 style="text-decoration: underline;">User Detail Form</h2>
+    <p>
+        The Create operation in Gutmeal allows users to enter their personal details through a simple form, including age, gender, health conditions, exercise frequency, diet preferences, and more. Based on the user-provided information, the website will suggest the most suitable meal plan tailored to their specific needs.This operation ensures that users receive meal plan suggestions that best fit their lifestyle and dietary requirements, offering a more customized and effective approach to meal planning.
+
+    </p>
+
+</div>
+
+
+
+<form asp-action="Create" method="post" class="user-form">
+    <label asp-for="Age">Age:</label>
+    <input asp-for="Age" type="number" /><br />
+
+    <label asp-for="Gender">Gender:</label>
+    <select asp-for="Gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select><br />
+
+    <label asp-for="DigestiveIssuesFrequency">Digestive Issues Frequency:</label>
+    <select asp-for="DigestiveIssuesFrequency">
+        <option>Never</option>
+        <option>Sometimes</option>
+        <option>Often</option>
+    </select><br />
+
+    <label asp-for="FoodAllergies">Food Allergies:</label>
+    <select asp-for="FoodAllergies">
+        <option value="false">No</option>
+        <option value="true">Yes</option>
+    </select><br />
+
+    <label asp-for="HealthConditions">Health Conditions:</label>
+    <select asp-for="HealthConditions">
+        <option value="false">No</option>
+        <option value="true">Yes</option>
+    </select><br />
+
+    <label asp-for="DietType">Diet Type:</label>
+    <select asp-for="DietType">
+        <option>Vegetarian</option>
+        <option>Gluten-Free</option>
+        <option>Omnivore</option>
+        <option>Vegan</option>
+    </select><br />
+
+    <label asp-for="ProcessedFoodConsumption">Processed Food Consumption:</label>
+    <select asp-for="ProcessedFoodConsumption">
+        <option>Rarely</option>
+        <option>Sometimes</option>
+        <option>Often</option>
+    </select><br />
+
+    <label asp-for="FiberFoodIntake">Fiber Food Intake:</label>
+    <select asp-for="FiberFoodIntake">
+        <option>Rarely</option>
+        <option>Sometimes</option>
+        <option>Often</option>
+    </select><br />
+
+    <label asp-for="ExerciseFrequency">Exercise Frequency:</label>
+    <select asp-for="ExerciseFrequency">
+        <option>Sedentary</option>
+        <option>Occasional</option>
+        <option>Regular</option>
+    </select><br />
+
+    <label asp-for="StressLevel">Stress Level (1-10):</label>
+    <input asp-for="StressLevel" type="range" min="1" max="10" /><br />
+
+    <label asp-for="SleepQuality">Sleep Quality (1-10):</label>
+    <input asp-for="SleepQuality" type="range" min="1" max="10" /><br />
+
+    <button type="submit">Submit</button>
+</form>
