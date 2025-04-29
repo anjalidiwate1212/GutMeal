@@ -4,9 +4,19 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/charts.css" />
 }
+
 <body>
     <div class="container">
-        <div class="info-section"><h2 style="font-weight: bold; text-align: center;">Interactive Charts</h2></div>
+        <div class="info-section">
+            <h2 style="font-weight: bold; text-align: center;">Interactive Charts</h2>
+
+            <div class="user-input-section" style="margin-bottom: 20px; text-align: center;">
+                <input type="text" id="inputFoodName" placeholder="Enter Food Name" style="margin: 5px;" />
+                <input type="number" id="inputQuantity" placeholder="Quantity (grams)" style="margin: 5px; width: 150px;" />
+                <br/>
+                <button id="fetchFoodDataBtn" class="btn btn-success" style="margin-top: 10px;">Get Food Nutrition</button>
+            </div>
+        </div>
 
         <div class="charts">
             <div class="chart-container">
@@ -22,12 +32,235 @@
                 <canvas id="doughnutChart"></canvas>
             </div>
         </div>
+
+        <!-- New Section for Exercise Info -->
+        <div class="exercise-section" style="margin-top: 50px; text-align: center;">
+            <h3>Exercise Needed to Burn This Food</h3>
+            <div id="exerciseInfo" style="margin-top: 20px;"></div>
+        </div>
+
     </div>
-
 </body>
-
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="~/js/charts.js"></script>
+
+    <script>
+    let barChart, lineChart, pieChart, doughnutChart;
+
+    document.getElementById('fetchFoodDataBtn').addEventListener('click', function() {
+        const foodName = document.getElementById('inputFoodName').value.trim();
+        const quantity = parseFloat(document.getElementById('inputQuantity').value.trim()) || 100;
+
+        if (!foodName) {
+            alert('Please enter a food name!');
+            return;
+        }
+
+        const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${foodName}&search_simple=1&action=process&json=1`;
+
+        // Show spinner
+        showSpinner();
+
+        // API fetch with timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 50000); // 50 seconds timeout
+
+        fetch(url, { signal: controller.signal })
+          .then(response => response.json())
+          .then(data => {
+              hideSpinner();
+              clearTimeout(timeoutId);
+
+              if (!data.products || data.products.length === 0) {
+                  alert('No nutrition data found for that food.');
+                  return;
+              }
+
+              const product = data.products.find(p => p.nutriments &&
+                  p.nutriments['energy-kcal'] !== undefined &&
+                  p.nutriments['fat'] !== undefined &&
+                  p.nutriments['carbohydrates'] !== undefined &&
+                  p.nutriments['proteins'] !== undefined
+              );
+
+              if (!product) {
+                  alert('No complete nutrition info found for this food.');
+                  return;
+              }
+
+              const nutriments = product.nutriments;
+              const scaleFactor = quantity / 100;
+
+              const calories = (nutriments['energy-kcal'] || 0) * scaleFactor;
+              const fat = (nutriments['fat'] || 0) * scaleFactor;
+              const carbs = (nutriments['carbohydrates'] || 0) * scaleFactor;
+              const protein = (nutriments['proteins'] || 0) * scaleFactor;
+              const fiber = (nutriments['fiber'] || 0) * scaleFactor;
+
+              populateCharts(calories, fat, carbs, protein, fiber);
+              calculateExercise(calories);
+          })
+          .catch(error => {
+              hideSpinner();
+              if (error.name === 'AbortError') {
+                  alert('Server is slow or unavailable. Please try again later.');
+              } else {
+                  console.error('Error fetching data:', error);
+              }
+          });
+    });
+
+    function showSpinner() {
+        if (!document.getElementById('spinnerDiv')) {
+            const spinner = document.createElement('div');
+            spinner.id = 'spinnerDiv';
+            spinner.innerHTML = `
+                <div class="text-center" style="margin-top: 20px;">
+                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading data, please wait...</p>
+                </div>`;
+            document.querySelector('.info-section').appendChild(spinner);
+        }
+    }
+
+    function hideSpinner() {
+        const spinner = document.getElementById('spinnerDiv');
+        if (spinner) spinner.remove();
+    }
+
+    function populateCharts(calories, fat, carbs, protein, fiber) {
+        // Destroy old charts
+        if (barChart) barChart.destroy();
+        if (lineChart) lineChart.destroy();
+        if (pieChart) pieChart.destroy();
+        if (doughnutChart) doughnutChart.destroy();
+
+        // BAR CHART
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ["Fat (g)", "Carbs (g)", "Protein (g)"],
+                datasets: [{
+                    label: 'Macronutrients',
+                    data: [fat, carbs, protein],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(75, 192, 192, 0.6)'
+                    ]
+                }]
+            }
+        });
+
+        // LINE CHART
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        lineChart = new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ["Breakfast", "Lunch", "Dinner"],
+                datasets: [
+                    {
+                        label: "Fat (g)",
+                        data: [fat * 0.3, fat * 0.4, fat * 0.3],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: "Carbs (g)",
+                        data: [carbs * 0.35, carbs * 0.4, carbs * 0.25],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: "Protein (g)",
+                        data: [protein * 0.4, protein * 0.35, protein * 0.25],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Macronutrient Trend Over Meals' }
+                }
+            }
+        });
+
+        // PIE CHART
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        const totalMacros = fat + carbs + protein;
+        pieChart = new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ["Fat %", "Carbs %", "Protein %"],
+                datasets: [{
+                    data: [
+                        (fat / totalMacros) * 100,
+                        (carbs / totalMacros) * 100,
+                        (protein / totalMacros) * 100
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 205, 86, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+                    ]
+                }]
+            }
+        });
+
+        // DOUGHNUT CHART
+        const doughnutCtx = document.getElementById('doughnutChart').getContext('2d');
+        doughnutChart = new Chart(doughnutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Calories from Fat", "Calories from Carbs", "Calories from Protein"],
+                datasets: [{
+                    data: [fat * 9, carbs * 4, protein * 4],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)'
+                    ]
+                }]
+            }
+        });
+    }
+
+    function calculateExercise(calories) {
+        const runningCaloriesPerHour = 600;
+        const walkingCaloriesPerHour = 280;
+        const cyclingCaloriesPerHour = 500;
+        const swimmingCaloriesPerHour = 500;
+
+        const runningMinutes = (calories / runningCaloriesPerHour) * 60;
+        const walkingMinutes = (calories / walkingCaloriesPerHour) * 60;
+        const cyclingMinutes = (calories / cyclingCaloriesPerHour) * 60;
+        const swimmingMinutes = (calories / swimmingCaloriesPerHour) * 60;
+
+        const exerciseInfoDiv = document.getElementById('exerciseInfo');
+        exerciseInfoDiv.innerHTML = `
+            <table class="table table-striped" style="margin: 0 auto; width: 70%;">
+                <thead><tr><th>Exercise Type</th><th>Minutes Needed</th></tr></thead>
+                <tbody>
+                    <tr><td>Running (6 mph)</td><td>${runningMinutes.toFixed(1)} min</td></tr>
+                    <tr><td>Walking (3 mph)</td><td>${walkingMinutes.toFixed(1)} min</td></tr>
+                    <tr><td>Cycling (moderate)</td><td>${cyclingMinutes.toFixed(1)} min</td></tr>
+                    <tr><td>Swimming (moderate)</td><td>${swimmingMinutes.toFixed(1)} min</td></tr>
+                </tbody>
+            </table>
+        `;
+    }
+    </script>
 }
