@@ -1,0 +1,53 @@
+@model List<GutMeal_Website.Models.GutHealthUser>
+@{
+    ViewData["Title"] = "Read";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/gutuser.css" />
+}
+
+<h2>All Gut Health Entries</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Age</th>
+            <th>BMI</th>
+            <th>Gender</th>
+            <th>Protein</th>
+            <th>Fiber</th>
+            <th>Carbs</th>
+            <th>Fat</th>
+            <th>Allergies</th>
+            <th>Meal Plan</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var u in Model)
+{
+        <tr>
+            <td>@u.Age</td>
+            <td>@u.BMI</td>
+            <td>@u.Gender</td>
+            <td>@u.Protein_Intake</td>
+            <td>@u.Fiber_Intake</td>
+            <td>@u.Carbohydrate_Intake</td>
+            <td>@u.Fat_Intake</td>
+            <td>
+                @(u.Dairy_Allergy ? "Dairy " : "")
+                @(u.Gluten_Allergy ? "Gluten " : "")
+                @(u.Nut_Allergy ? "Nut" : "")
+            </td>
+            <td><strong>@u.SuggestedMealPlan</strong></td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@u.Id" class="btn btn-sm btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@u.Id" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">Add New Entry</a>

@@ -1,0 +1,111 @@
+@model GutMeal_Website.Models.GutHealthUser
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/gutuser.css" />
+}
+
+<h2>Create Gut Health Profile</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" class="form-control">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BMI"></label>
+        <input asp-for="BMI" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Protein_Intake"></label>
+        <select asp-for="Protein_Intake" class="form-control">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fiber_Intake"></label>
+        <select asp-for="Fiber_Intake" class="form-control">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Carbohydrate_Intake"></label>
+        <select asp-for="Carbohydrate_Intake" class="form-control">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fat_Intake"></label>
+        <select asp-for="Fat_Intake" class="form-control">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="Dairy_Allergy" class="form-check-input" type="checkbox" />
+        <label asp-for="Dairy_Allergy" class="form-check-label"></label>
+    </div>
+    <div class="form-check">
+        <input asp-for="Gluten_Allergy" class="form-check-input" type="checkbox" />
+        <label asp-for="Gluten_Allergy" class="form-check-label"></label>
+    </div>
+    <div class="form-check">
+        <input asp-for="Nut_Allergy" class="form-check-input" type="checkbox" />
+        <label asp-for="Nut_Allergy" class="form-check-label"></label>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Bacteroides"></label>
+        <input asp-for="Bacteroides" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Firmicutes"></label>
+        <input asp-for="Firmicutes" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Lactobacillus"></label>
+        <input asp-for="Lactobacillus" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Proteobacteria"></label>
+        <input asp-for="Proteobacteria" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Actinobacteria"></label>
+        <input asp-for="Actinobacteria" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Verrucomicrobia"></label>
+        <input asp-for="Verrucomicrobia" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

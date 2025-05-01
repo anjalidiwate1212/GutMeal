@@ -1,36 +1,36 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net9.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\prayagrajsingh\\.nuget\\packages\\": {}
+    "/Users/dushyanthasrani/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\GutMeal_Website.csproj",
+      "projectUniqueName": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/GutMeal_Website.csproj",
       "projectName": "GutMeal_Website",
-      "projectPath": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\GutMeal_Website.csproj",
-      "packagesPath": "C:\\Users\\prayagrajsingh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\obj\\",
+      "projectPath": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/GutMeal_Website.csproj",
+      "packagesPath": "/Users/dushyanthasrani/.nuget/packages/",
+      "outputPath": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\prayagrajsingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/dushyanthasrani/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net9.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "projectReferences": {}
         }
       },
@@ -43,11 +43,12 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net9.0": {
+        "targetAlias": "net9.0",
         "imports": [
           "net461",
           "net462",
@@ -67,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\prayagrajsingh\\Downloads\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

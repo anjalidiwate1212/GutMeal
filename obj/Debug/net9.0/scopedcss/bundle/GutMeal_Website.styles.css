@@ -1,0 +1,75 @@
+/* _content/GutMeal_Website/Views/Shared/_Layout.cshtml.rz.scp.css */
+a.navbar-brand[b-cnab7e16u8] {
+  white-space: normal;
+  word-break: break-word;
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+a.navbar-brand:hover[b-cnab7e16u8] {
+  text-decoration: none;
+  color: #28a745;
+}
+
+a[b-cnab7e16u8] {
+  color: #0077cc;
+}
+
+/* Primary button styling */
+.btn-primary[b-cnab7e16u8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+
+.nav-pills .nav-link.active[b-cnab7e16u8],
+.nav-pills .show > .nav-link[b-cnab7e16u8] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+
+.border-top[b-cnab7e16u8] {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom[b-cnab7e16u8] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-cnab7e16u8] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* Footer */
+.footer[b-cnab7e16u8] {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+
+button.accept-policy[b-cnab7e16u8] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+
+.card[b-cnab7e16u8] {
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover[b-cnab7e16u8] {
+  transform: scale(1.02);
+}
+
+.card-title[b-cnab7e16u8] {
+  font-weight: 600;
+}
+
+.card-text[b-cnab7e16u8] {
+  color: #555;
+}
