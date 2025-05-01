@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e70fcdf62ea3e1ce530c4f9467b36488c5323fe7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc128d057eb0c739954bad414e4703d5d2ed9bdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

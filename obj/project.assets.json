@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/dushyanthasrani/.nuget/packages/": {}
+    "C:\\Users\\prayagrajsingh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/GutMeal_Website.csproj",
+      "projectUniqueName": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\GutMeal_Website.csproj",
       "projectName": "GutMeal_Website",
-      "projectPath": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/GutMeal_Website.csproj",
-      "packagesPath": "/Users/dushyanthasrani/.nuget/packages/",
-      "outputPath": "/Users/dushyanthasrani/Desktop/Courses/AppDev/GutMeal/obj/",
+      "projectPath": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\GutMeal_Website.csproj",
+      "packagesPath": "C:\\Users\\prayagrajsingh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\prayagrajsingh\\Desktop\\GutMeal_web\\GutMeal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dushyanthasrani/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\prayagrajsingh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -68,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\prayagrajsingh\\Downloads\\dotnet-9\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

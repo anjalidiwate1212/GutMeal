@@ -40,18 +40,27 @@ body {
 .meal-plan-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
+
 .meal-plan {
-    width: 23%; 
+    flex: 1 1 260px;
+    max-width: 280px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
+
+.meal-plan:hover {
+    transform: translateY(-5px);
+}
+
 
     .meal-plan img {
         width: 100%;
