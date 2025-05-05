@@ -12,12 +12,12 @@
 <form asp-action="Create" method="post">
     <div class="form-group">
         <label asp-for="Age"></label>
-        <input asp-for="Age" class="form-control" />
+        <input asp-for="Age" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label asp-for="Gender"></label>
-        <select asp-for="Gender" class="form-control">
+        <select asp-for="Gender" class="form-control" required>
             <option>Male</option>
             <option>Female</option>
         </select>
@@ -25,12 +25,13 @@
 
     <div class="form-group">
         <label asp-for="BMI"></label>
-        <input asp-for="BMI" class="form-control" />
+        <input asp-for="BMI" class="form-control" required/>
+        <small class="form-text text-muted">Typical BMI range is 18.5 – 24.9 (healthy).</small>
     </div>
 
     <div class="form-group">
         <label asp-for="Protein_Intake"></label>
-        <select asp-for="Protein_Intake" class="form-control">
+        <select asp-for="Protein_Intake" class="form-control" required>
             <option>Low</option>
             <option>Moderate</option>
             <option>High</option>
@@ -39,7 +40,7 @@
 
     <div class="form-group">
         <label asp-for="Fiber_Intake"></label>
-        <select asp-for="Fiber_Intake" class="form-control">
+        <select asp-for="Fiber_Intake" class="form-control" required>
             <option>Low</option>
             <option>Moderate</option>
             <option>High</option>
@@ -48,7 +49,7 @@
 
     <div class="form-group">
         <label asp-for="Carbohydrate_Intake"></label>
-        <select asp-for="Carbohydrate_Intake" class="form-control">
+        <select asp-for="Carbohydrate_Intake" class="form-control" required>
             <option>Low</option>
             <option>Moderate</option>
             <option>High</option>
@@ -57,7 +58,7 @@
 
     <div class="form-group">
         <label asp-for="Fat_Intake"></label>
-        <select asp-for="Fat_Intake" class="form-control">
+        <select asp-for="Fat_Intake" class="form-control" required>
             <option>Low</option>
             <option>Moderate</option>
             <option>High</option>

@@ -1,15 +1,30 @@
+using System.ComponentModel.DataAnnotations;
 namespace GutMeal_Website.Models
 {
     public class GutHealthUser
     {
         public int Id { get; set; }
+
+        [Required]
         public int Age { get; set; }
+
+        [Required]
         public string Gender { get; set; }
+
+        [Required]
+        [Range(10, 50, ErrorMessage = "BMI should be between 10 and 50.")]
         public double BMI { get; set; }
 
+        [Required]
         public string Protein_Intake { get; set; }
+
+        [Required]
         public string Fiber_Intake { get; set; }
+
+        [Required]
         public string Carbohydrate_Intake { get; set; }
+
+        [Required]
         public string Fat_Intake { get; set; }
 
         public bool Dairy_Allergy { get; set; }
