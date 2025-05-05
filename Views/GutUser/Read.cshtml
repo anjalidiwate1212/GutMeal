@@ -48,10 +48,9 @@
                     <a asp-action="Delete" asp-route-id="@u.Id" class="btn btn-sm btn-outline-danger" title="Delete">
                         <i class="bi bi-trash"></i>
                     </a>
-                
-                   
-               
-
+                    <a asp-controller="Home" asp-action="Charts" asp-route-meal="@u.SuggestedMealPlan" class="btn btn-sm btn-outline-info" title="View Meal Plan">
+                        <i class="bi bi-info-circle"></i>
+                    </a>
             </td>
         </tr>
 }

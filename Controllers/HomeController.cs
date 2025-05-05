@@ -25,9 +25,38 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Charts()
+    public IActionResult Charts(string meal)
     {
+        if (!string.IsNullOrEmpty(meal))
+        {
+            // Pass meal plan info to the view via ViewBag
+            ViewBag.MealPlan = meal;
+
+            // Define default foods based on meal plan
+            ViewBag.DefaultFoods = GetDefaultFoodsForMealPlan(meal);
+        }
+
         return View();
+    }
+
+    private Dictionary<string, List<string>> GetDefaultFoodsForMealPlan(string mealPlan)
+    {
+        // Define default foods for each meal plan
+        var mealPlanFoods = new Dictionary<string, List<string>>
+        {
+            ["Keto-Friendly Low-Sugar Plan"] = new List<string> { "avocado", "salmon", "spinach" },
+            ["Gut-Health Fiber Boost"] = new List<string> { "lentils", "oats", "apples" },
+            ["Mediterranean Gut Balance"] = new List<string> { "olive oil", "tomatoes", "fish" },
+            ["Metabolic Maintenance Diet"] = new List<string> { "chicken breast", "brown rice", "broccoli" },
+            ["Dairy-Free Anti-Inflammation Plan"] = new List<string> { "tofu", "quinoa", "blueberries" },
+            ["Digestive Relief (Low-FODMAP)"] = new List<string> { "eggs", "rice", "kale" },
+            ["Heart Health Plus"] = new List<string> { "walnuts", "flaxseed", "berries" }
+        };
+
+        // Return default foods for the specified meal plan, or a generic default if not found
+        return mealPlanFoods.TryGetValue(mealPlan, out var foods)
+            ? new Dictionary<string, List<string>> { ["foods"] = foods }
+            : new Dictionary<string, List<string>> { ["foods"] = new List<string> { "apple", "chicken", "broccoli" } };
     }
 
     public IActionResult Create()
@@ -84,3 +113,5 @@ public class HomeController : Controller
         return View();
     }
 }
+
+

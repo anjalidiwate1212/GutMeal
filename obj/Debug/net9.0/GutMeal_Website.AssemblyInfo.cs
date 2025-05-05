@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e6aac2cc0bb3fdb68696304b4e5253c0c5b426d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b27a8224b8a3306c13fa68109fec6d37c7a849ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GutMeal_Website")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

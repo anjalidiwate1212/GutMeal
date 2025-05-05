@@ -7,26 +7,46 @@
 
 <body>
     <div class="container">
+        @if (ViewBag.MealPlan != null)
+        {
+            <div class="info-section" style="margin-bottom: 20px;">
+                <h2 style="font-weight: bold; text-align: center;">Your Suggested Meal Plan: @ViewBag.MealPlan</h2>
+                <p class="text-center">Below are recommended foods for your meal plan. You can analyze their nutrition content using the chart tools.</p>
+            </div>
+        }
+
         <div class="info-section">
             <h2 style="font-weight: bold; text-align: center;">Track your Macronutrients</h2>
 
             <div class="user-input-section text-center" style="margin-bottom: 20px;">
                 <h4>Enter up to 3 foods and quantity (grams):</h4>
-                <div id="foodInputs">
-                    <div>
-                        <input type="text" class="food-name" placeholder="Food 1" />
-                        <input type="number" class="food-qty" placeholder="Quantity (g)" style="width: 120px;" />
+                <div id="foodInputs" class="container">
+                    <div class="row mb-2 justify-content-center">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control food-name" placeholder="Food 1" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
+                        </div>
                     </div>
-                    <div>
-                        <input type="text" class="food-name" placeholder="Food 2" />
-                        <input type="number" class="food-qty" placeholder="Quantity (g)" style="width: 120px;" />
+                    <div class="row mb-2 justify-content-center">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control food-name" placeholder="Food 2" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
+                        </div>
                     </div>
-                    <div>
-                        <input type="text" class="food-name" placeholder="Food 3" />
-                        <input type="number" class="food-qty" placeholder="Quantity (g)" style="width: 120px;" />
+                    <div class="row mb-2 justify-content-center">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control food-name" placeholder="Food 3" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
+                        </div>
                     </div>
                 </div>
-                <button id="fetchFoodDataBtn" class="btn btn-success mt-2">Get Combined Nutrition</button>
+                <button id="fetchFoodDataBtn" class="btn btn-success btn-lg mt-3">Get Combined Nutrition</button>
             </div>
         </div>
 
@@ -48,226 +68,298 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-    let barChart, lineChart, pieChart, doughnutChart;
+            let barChart, lineChart, pieChart, doughnutChart;
 
-    function showSpinner() {
-        if (!document.getElementById('spinnerDiv')) {
-            const spinner = document.createElement('div');
-            spinner.id = 'spinnerDiv';
-            spinner.innerHTML = `
-                <div class="text-center" style="margin-top: 20px;">
-                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p>Loading data, please wait...</p>
-                </div>`;
-            document.querySelector('.info-section').appendChild(spinner);
-        }
-    }
+            // Get meal plan info if available
+            const mealPlan = '@(ViewBag.MealPlan ?? "")';
 
-    function hideSpinner() {
-        const spinner = document.getElementById('spinnerDiv');
-        if (spinner) spinner.remove();
-    }
-
-    function populateCharts(calories, fat, carbs, protein, fiber) {
-        if (barChart) barChart.destroy();
-        if (lineChart) lineChart.destroy();
-        if (pieChart) pieChart.destroy();
-        if (doughnutChart) doughnutChart.destroy();
-
-        // Bar Chart
-        const barCtx = document.getElementById('barChart').getContext('2d');
-        barChart = new Chart(barCtx, {
-            type: 'bar',
-            data: {
-                labels: ["Fat (g)", "Carbs (g)", "Protein (g)"],
-                datasets: [{
-                    label: 'Macronutrients',
-                    data: [fat, carbs, protein],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(75, 192, 192, 0.6)'
-                    ]
-                }]
-            }
-        });
-
-        // Line Chart
-        const lineCtx = document.getElementById('lineChart').getContext('2d');
-        lineChart = new Chart(lineCtx, {
-            type: 'line',
-            data: {
-                labels: ["Breakfast", "Lunch", "Dinner"],
-                datasets: [
-                    {
-                        label: "Fat (g)",
-                        data: [fat * 0.3, fat * 0.4, fat * 0.3],
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        fill: true,
-                        tension: 0.4
-                    },
-                    {
-                        label: "Carbs (g)",
-                        data: [carbs * 0.35, carbs * 0.4, carbs * 0.25],
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        fill: true,
-                        tension: 0.4
-                    },
-                    {
-                        label: "Protein (g)",
-                        data: [protein * 0.4, protein * 0.35, protein * 0.25],
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        fill: true,
-                        tension: 0.4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    title: { display: true, text: 'Macronutrient Trend Over Meals' }
+            function showSpinner() {
+                if (!document.getElementById('spinnerDiv')) {
+                    const spinner = document.createElement('div');
+                    spinner.id = 'spinnerDiv';
+                    spinner.innerHTML = `
+                        <div class="text-center" style="margin-top: 20px;">
+                            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Loading data, please wait...</p>
+                        </div>`;
+                    document.querySelector('.info-section').appendChild(spinner);
                 }
             }
-        });
 
-        // Pie Chart
-        const pieCtx = document.getElementById('pieChart').getContext('2d');
-        const totalMacros = fat + carbs + protein;
-        pieChart = new Chart(pieCtx, {
-            type: 'pie',
-            data: {
-                labels: ["Fat %", "Carbs %", "Protein %"],
-                datasets: [{
-                    data: [
-                        (fat / totalMacros) * 100,
-                        (carbs / totalMacros) * 100,
-                        (protein / totalMacros) * 100
-                    ],
-                    backgroundColor: [
-                        'rgba(255, 205, 86, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 99, 132, 0.6)'
-                    ]
-                }]
+            function hideSpinner() {
+                const spinner = document.getElementById('spinnerDiv');
+                if (spinner) spinner.remove();
             }
-        });
 
-        // Doughnut Chart
-        const doughnutCtx = document.getElementById('doughnutChart').getContext('2d');
-        doughnutChart = new Chart(doughnutCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ["Calories from Fat", "Calories from Carbs", "Calories from Protein"],
-                datasets: [{
-                    data: [fat * 9, carbs * 4, protein * 4],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)'
-                    ]
-                }]
-            }
-        });
-    }
+            function populateCharts(calories, fat, carbs, protein, fiber) {
+                if (barChart) barChart.destroy();
+                if (lineChart) lineChart.destroy();
+                if (pieChart) pieChart.destroy();
+                if (doughnutChart) doughnutChart.destroy();
 
-    function calculateExercise(calories) {
-        const exerciseInfoDiv = document.getElementById('exerciseInfo');
-        const activities = [
-            { name: "Running (6 mph)", calPerHr: 600 },
-            { name: "Walking (3 mph)", calPerHr: 280 },
-            { name: "Cycling (moderate)", calPerHr: 500 },
-            { name: "Swimming (moderate)", calPerHr: 500 }
-        ];
-
-        let html = `<table class="table table-striped" style="margin: 0 auto; width: 70%;">
-            <thead><tr><th>Exercise Type</th><th>Minutes Needed</th></tr></thead><tbody>`;
-
-        activities.forEach(activity => {
-            const minutes = (calories / activity.calPerHr) * 60;
-            html += `<tr><td>${activity.name}</td><td>${minutes.toFixed(1)} min</td></tr>`;
-        });
-
-        html += `</tbody></table>`;
-        exerciseInfoDiv.innerHTML = html;
-    }
-
-    document.getElementById('fetchFoodDataBtn').addEventListener('click', function () {
-        const names = Array.from(document.querySelectorAll('.food-name')).map(el => el.value.trim());
-        const quantities = Array.from(document.querySelectorAll('.food-qty')).map(el => parseFloat(el.value.trim()) || 0);
-
-        const foodRequests = names.map((name, i) => {
-            if (!name || quantities[i] === 0) return null;
-            const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${name}&search_simple=1&action=process&json=1`;
-            return fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    const product = data.products.find(p => p.nutriments?.['energy-kcal']);
-                    if (!product) return null;
-                    const n = product.nutriments;
-                    const scale = quantities[i] / 100;
-                    return {
-                        calories: (n['energy-kcal'] || 0) * scale,
-                        fat: (n['fat'] || 0) * scale,
-                        carbs: (n['carbohydrates'] || 0) * scale,
-                        protein: (n['proteins'] || 0) * scale,
-                        fiber: (n['fiber'] || 0) * scale
-                    };
-                })
-                .catch(err => {
-                    console.error(`Error for ${name}:`, err);
-                    return null;
+                // Bar Chart
+                const barCtx = document.getElementById('barChart').getContext('2d');
+                barChart = new Chart(barCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Fat (g)", "Carbs (g)", "Protein (g)"],
+                        datasets: [{
+                            label: 'Macronutrients',
+                            data: [fat, carbs, protein],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(75, 192, 192, 0.6)'
+                            ]
+                        }]
+                    }
                 });
-        }).filter(r => r);
 
-        if (foodRequests.length === 0) {
-            alert("Please enter at least one valid food name and quantity.");
-            return;
-        }
+                // Line Chart
+                const lineCtx = document.getElementById('lineChart').getContext('2d');
+                lineChart = new Chart(lineCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ["Breakfast", "Lunch", "Dinner"],
+                        datasets: [
+                            {
+                                label: "Fat (g)",
+                                data: [fat * 0.3, fat * 0.4, fat * 0.3],
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: "Carbs (g)",
+                                data: [carbs * 0.35, carbs * 0.4, carbs * 0.25],
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: "Protein (g)",
+                                data: [protein * 0.4, protein * 0.35, protein * 0.25],
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                fill: true,
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'top' },
+                            title: { display: true, text: 'Macronutrient Trend Over Meals' }
+                        }
+                    }
+                });
 
-        showSpinner();
+                // Pie Chart
+                const pieCtx = document.getElementById('pieChart').getContext('2d');
+                const totalMacros = fat + carbs + protein;
+                pieChart = new Chart(pieCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Fat %", "Carbs %", "Protein %"],
+                        datasets: [{
+                            data: [
+                                (fat / totalMacros) * 100,
+                                (carbs / totalMacros) * 100,
+                                (protein / totalMacros) * 100
+                            ],
+                            backgroundColor: [
+                                'rgba(255, 205, 86, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 99, 132, 0.6)'
+                            ]
+                        }]
+                    }
+                });
 
-        Promise.all(foodRequests).then(results => {
-            hideSpinner();
-            const total = results.reduce((sum, item) => {
-                if (!item) return sum;
-                return {
-                    calories: sum.calories + item.calories,
-                    fat: sum.fat + item.fat,
-                    carbs: sum.carbs + item.carbs,
-                    protein: sum.protein + item.protein,
-                    fiber: sum.fiber + item.fiber
+                // Doughnut Chart
+                const doughnutCtx = document.getElementById('doughnutChart').getContext('2d');
+                doughnutChart = new Chart(doughnutCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Calories from Fat", "Calories from Carbs", "Calories from Protein"],
+                        datasets: [{
+                            data: [fat * 9, carbs * 4, protein * 4],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)'
+                            ]
+                        }]
+                    }
+                });
+            }
+
+            function calculateExercise(calories) {
+                const exerciseInfoDiv = document.getElementById('exerciseInfo');
+                const activities = [
+                    { name: "Running (6 mph)", calPerHr: 600 },
+                    { name: "Walking (3 mph)", calPerHr: 280 },
+                    { name: "Cycling (moderate)", calPerHr: 500 },
+                    { name: "Swimming (moderate)", calPerHr: 500 }
+                ];
+
+                let html = `<table class="table table-striped" style="margin: 0 auto; width: 70%;">
+                    <thead><tr><th>Exercise Type</th><th>Minutes Needed</th></tr></thead><tbody>`;
+
+                activities.forEach(activity => {
+                    const minutes = (calories / activity.calPerHr) * 60;
+                    html += `<tr><td>${activity.name}</td><td>${minutes.toFixed(1)} min</td></tr>`;
+                });
+
+                html += `</tbody></table>`;
+                exerciseInfoDiv.innerHTML = html;
+            }
+
+            // Add class to make fetch button styling consistent
+        document.getElementById('fetchFoodDataBtn').classList.add('btn-lg');
+
+        document.getElementById('fetchFoodDataBtn').addEventListener('click', function () {
+                const names = Array.from(document.querySelectorAll('.food-name')).map(el => el.value.trim());
+                const quantities = Array.from(document.querySelectorAll('.food-qty')).map(el => parseFloat(el.value.trim()) || 0);
+
+                const foodRequests = names.map((name, i) => {
+                    if (!name || quantities[i] === 0) return null;
+                    const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${name}&search_simple=1&action=process&json=1`;
+                    return fetch(url)
+                        .then(res => res.json())
+                        .then(data => {
+                            const product = data.products.find(p => p.nutriments?.['energy-kcal']);
+                            if (!product) return null;
+                            const n = product.nutriments;
+                            const scale = quantities[i] / 100;
+                            return {
+                                calories: (n['energy-kcal'] || 0) * scale,
+                                fat: (n['fat'] || 0) * scale,
+                                carbs: (n['carbohydrates'] || 0) * scale,
+                                protein: (n['proteins'] || 0) * scale,
+                                fiber: (n['fiber'] || 0) * scale
+                            };
+                        })
+                        .catch(err => {
+                            console.error(`Error for ${name}:`, err);
+                            return null;
+                        });
+                }).filter(r => r);
+
+                if (foodRequests.length === 0) {
+                    alert("Please enter at least one valid food name and quantity.");
+                    return;
+                }
+
+                showSpinner();
+
+                Promise.all(foodRequests).then(results => {
+                    hideSpinner();
+                    const total = results.reduce((sum, item) => {
+                        if (!item) return sum;
+                        return {
+                            calories: sum.calories + item.calories,
+                            fat: sum.fat + item.fat,
+                            carbs: sum.carbs + item.carbs,
+                            protein: sum.protein + item.protein,
+                            fiber: sum.fiber + item.fiber
+                        };
+                    }, { calories: 0, fat: 0, carbs: 0, protein: 0, fiber: 0 });
+
+                    populateCharts(total.calories, total.fat, total.carbs, total.protein, total.fiber);
+                    calculateExercise(total.calories);
+                });
+            });
+
+            // On load: populate from query params or meal plan
+            window.addEventListener('DOMContentLoaded', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const mealPlanData = getMealPlanFoods();
+
+                // Use food from meal plan first, then from query params, then defaults
+                const defaults = [
+                    mealPlanData[0] || urlParams.get("food1") || "apple",
+                    mealPlanData[1] || urlParams.get("food2") || "",
+                    mealPlanData[2] || urlParams.get("food3") || ""
+                ];
+
+                const foodInputs = document.querySelectorAll(".food-name");
+                const qtyInputs = document.querySelectorAll(".food-qty");
+
+                defaults.forEach((val, idx) => {
+                    foodInputs[idx].value = val;
+                    qtyInputs[idx].value = val ? 100 : "";
+                });
+
+                // Add recommended foods section if meal plan is available
+                if (mealPlan) {
+                    addMealPlanRecommendations(mealPlanData);
+                }
+
+                document.getElementById('fetchFoodDataBtn').click();
+            });
+
+            function getMealPlanFoods() {
+                // Map meal plans to recommended foods
+                const mealPlanFoods = {
+                    "Keto-Friendly Low-Sugar Plan": ["avocado", "salmon", "spinach"],
+                    "Gut-Health Fiber Boost": ["lentils", "oats", "apples"],
+                    "Mediterranean Gut Balance": ["olive oil", "tomatoes", "fish"],
+                    "Metabolic Maintenance Diet": ["chicken breast", "brown rice", "broccoli"],
+                    "Dairy-Free Anti-Inflammation Plan": ["tofu", "quinoa", "blueberries"],
+                    "Digestive Relief (Low-FODMAP)": ["eggs", "rice", "kale"],
+                    "Heart Health Plus": ["walnuts", "flaxseed", "berries"]
                 };
-            }, { calories: 0, fat: 0, carbs: 0, protein: 0, fiber: 0 });
 
-            populateCharts(total.calories, total.fat, total.carbs, total.protein, total.fiber);
-            calculateExercise(total.calories);
-        });
-    });
+                // Return the foods for the current meal plan, or an empty array if not found
+                return mealPlan && mealPlanFoods[mealPlan] ? mealPlanFoods[mealPlan] : [];
+            }
 
-    // On load: populate from query params
-    window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const defaults = [
-            urlParams.get("food1") || "apple",
-            urlParams.get("food2") || "",
-            urlParams.get("food3") || ""
-        ];
+            function addMealPlanRecommendations(foods) {
+                // Create recommended foods section
+                if (foods && foods.length > 0) {
+                    const infoSection = document.querySelector('.info-section');
+                    const recDiv = document.createElement('div');
+                    recDiv.className = 'meal-plan-recommendations info-section';
+                    recDiv.style.marginBottom = "20px";
+                    recDiv.innerHTML = `
+                        <h2 style="font-weight: bold; text-align: center;">Recommended Foods for ${mealPlan}</h2>
+                        <div class="user-input-section text-center" style="margin-bottom: 20px;">
+                            <p>Click on any of these foods to add them to your analysis:</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                                ${foods.map(food =>
+                                    `<button class="btn btn-success food-rec-btn">${food}</button>`
+                                ).join('')}
+                            </div>
+                        </div>
+                    `;
 
-        const foodInputs = document.querySelectorAll(".food-name");
-        const qtyInputs = document.querySelectorAll(".food-qty");
+                    // Insert after the meal plan info but before the food input section
+                    const firstInfoSection = document.querySelector('.info-section');
+                    firstInfoSection.insertAdjacentElement('afterend', recDiv);
 
-        defaults.forEach((val, idx) => {
-            foodInputs[idx].value = val;
-            qtyInputs[idx].value = val ? 100 : "";
-        });
+                    // Add click handlers for the food buttons
+                    document.querySelectorAll('.food-rec-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            // Find the first empty food input
+                            const foodInputs = document.querySelectorAll('.food-name');
+                            const qtyInputs = document.querySelectorAll('.food-qty');
 
-        document.getElementById('fetchFoodDataBtn').click();
-    });
+                            for (let i = 0; i < foodInputs.length; i++) {
+                                if (!foodInputs[i].value) {
+                                    foodInputs[i].value = this.textContent;
+                                    qtyInputs[i].value = 100;
+                                    break;
+                                }
+                            }
+                        });
+                    });
+                }
+            }
     </script>
 }

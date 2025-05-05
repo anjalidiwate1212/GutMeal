@@ -1,44 +1,78 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "About Us";
 }
 
-<h2><strong>About Gutmeal</strong></h2>
-<div class="info-section">
-    <p><strong>Team Members</strong></p>
-    <p>Prayag Raj Singh - Developer - Created the entire base model for website</p>
-    <p>Gaurav Yadav - Developer - Worked on entire website design</p>
-    <p>Dushyanth Asrani - Developer - Handled CRUD operations</p>
-    <p>Anjali Diwate - Developer - Implemented the charts and logical data model</p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/aboutus.css" />
+}
+
+
+<!-- Hero Section -->
+<section class="about-hero">
+    <h2 class="hero-title">About Gutmeal</h2>
+    <p class="hero-subtitle">Revolutionizing Meal Planning Through Intelligent Nutrition</p>
+</section>
+
+<!-- Team Cards -->
+<section class="team-section">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="team-image">
+                <img src="~/images/P.jpeg" alt="Prayag Raj Singh">
+            </div>
+            <h3 class="team-name">Prayag Raj Singh</h3>
+            <p class="team-role">Developer</p>
+            <p class="team-description">Created the entire base model for website</p>
+        </div>
+
+        <div class="team-card">
+            <div class="team-image">
+                <img src="~/images/G.jpg" alt="Gaurav Yadav">
+            </div>
+            <h3 class="team-name">Gaurav Yadav</h3>
+            <p class="team-role">Developer</p>
+            <p class="team-description">Worked on entire website design</p>
+        </div>
+
+        <div class="team-card">
+            <div class="team-image">
+                <img src="~/images/d.jpg" alt="Dushyanth Asrani">
+            </div>
+            <h3 class="team-name">Dushyanth Asrani</h3>
+            <p class="team-role">Developer</p>
+            <p class="team-description">Handled CRUD operations</p>
+        </div>
+
+        <div class="team-card">
+            <div class="team-image">
+                <img src="~/images/A.jpeg" alt="Anjali Diwate">
+            </div>
+            <h3 class="team-name">Anjali Diwate</h3>
+            <p class="team-role">Developer</p>
+            <p class="team-description">Implemented the charts and logical data model</p>
+        </div>
+    </div>
+</section>
+
+<!-- Logical Data Model -->
+<div style="text-align: center;">
+    <div class="model-container">
+        <h2 class="section-title">Logical Data Model</h2>
+        <p class="model-description">This model defines the relationships between meal plans, ingredients, and users.</p>
+        <div class="model-image-wrapper">
+            <img src="~/images/Data Model New.jpeg" alt="Gutmeal Logical Data Model" class="model-image">
+        </div>
+        <p class="model-note">The structure enables personalized meal plan suggestions based on user input and preferences.</p>
+    </div>
 </div>
-<!-- Introduction Text Section -->
 
-<h3><strong>Logical Data Model</strong></h3>
-
-<!-- Logical Data Model Section -->
-<div class="info-section">
-    <p><strong>Below is the logical data model used in the Gutmeal application:</strong></p>
-</div>
-
-<!-- Image of the Data Model -->
-<img src="~/images/Data Model.png" alt="Gutmeal Logical Data Model" style="width: 100%; height: auto; max-width: 800px;" />
-
-<!-- Data Model Description Section -->
-<div class="info-section">
-    <p><strong>This model defines the relationships between meal plans, ingredients, and users. It also outlines how data is structured to suggest personalized meal plans based on the user's input.</strong></p>
-</div>
-
-<h4><strong>Note:</strong></h4>
-
-
-
-<div class="info-section">
-    <p><strong>Github Repository Link</strong></p>
-    <a href="https://github.com/prayagsingh6/GutMeal_website" target="_blank">Visit GutMeal GitHub Repository</a>
-</div>
-
-
-<!-- Note Section -->
-<div class="info-section">
-    <p><strong>The scope of this project can be extended with further elaboration on the user-specific meal recommendations and advanced dietary tracking.</strong></p>
-</div>
+<!-- GitHub Section -->
+<section class="github-section">
+    <h2>GitHub Repository</h2>
+    <div class="github-link">
+        <a href="https://github.com/prayagsingh6/GutMeal_website" target="_blank" class="github-button">
+            Visit GutMeal GitHub Repository
+        </a>
+    </div>
+</section>
