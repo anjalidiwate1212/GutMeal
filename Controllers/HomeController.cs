@@ -41,7 +41,7 @@ public class HomeController : Controller
 
     private Dictionary<string, List<string>> GetDefaultFoodsForMealPlan(string mealPlan)
     {
-        // Define default foods for each meal plan
+        
         var mealPlanFoods = new Dictionary<string, List<string>>
         {
             ["Keto-Friendly Low-Sugar Plan"] = new List<string> { "avocado", "salmon", "spinach" },
@@ -61,7 +61,7 @@ public class HomeController : Controller
 
     public IActionResult Create()
     {
-        // Show empty form
+        
         return View(new UserDetails());
     }
 
@@ -70,12 +70,9 @@ public class HomeController : Controller
     {
         if (!ModelState.IsValid)
         {
-            // If validation fails, redisplay form with current data
             return View(userDetails);
         }
-        // TODO: Save or process the userDetails as needed
 
-        // Redirect to meal plans page after submission (placeholder)
         return RedirectToAction("ExploreMealPlans");
     }
 

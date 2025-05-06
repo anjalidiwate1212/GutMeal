@@ -6,62 +6,62 @@
 }
 
 <body>
-    <div class="container">
-        @if (ViewBag.MealPlan != null)
-        {
-            <div class="info-section" style="margin-bottom: 20px;">
-                <h2 style="font-weight: bold; text-align: center;">Your Suggested Meal Plan: @ViewBag.MealPlan</h2>
-                <p class="text-center">Below are recommended foods for your meal plan. You can analyze their nutrition content using the chart tools.</p>
-            </div>
-        }
 
-        <div class="info-section">
+    @if (ViewBag.MealPlan != null)
+    {
+
+        <h2 style="font-weight: bold; text-align: center;">Your Suggested Meal Plan: @ViewBag.MealPlan</h2>
+        <p class="text-center">Below are recommended foods for your meal plan. You can analyze their nutrition content using the chart tools.</p>
+
+    }
+    <div class="info-section">
             <h2 style="font-weight: bold; text-align: center;">Track your Macronutrients</h2>
 
             <div class="user-input-section text-center" style="margin-bottom: 20px;">
                 <h4>Enter up to 3 foods and quantity (grams):</h4>
                 <div id="foodInputs" class="container">
                     <div class="row mb-2 justify-content-center">
-                        <div class="col-md-4">
+                    <div class="col-md-6 mb-2">
                             <input type="text" class="form-control food-name" placeholder="Food 1" />
                         </div>
-                        <div class="col-md-2">
+                    <div class="col-md-4 mb-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
                     <div class="row mb-2 justify-content-center">
-                        <div class="col-md-4">
+                    <div class="col-md-6 mb-2">
                             <input type="text" class="form-control food-name" placeholder="Food 2" />
                         </div>
-                        <div class="col-md-2">
+                    <div class="col-md-4 mb-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
                     <div class="row mb-2 justify-content-center">
-                        <div class="col-md-4">
+                    <div class="col-md-6 mb-2">
                             <input type="text" class="form-control food-name" placeholder="Food 3" />
                         </div>
-                        <div class="col-md-2">
+                    <div class="col-md-4 mb-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
                 </div>
                 <button id="fetchFoodDataBtn" class="btn btn-success btn-lg mt-3">Get Combined Nutrition</button>
             </div>
-        </div>
+       
 
         <div class="charts">
-            <div class="chart-container"><canvas id="barChart"></canvas></div>
-            <div class="chart-container"><canvas id="lineChart"></canvas></div>
-            <div class="chart-container"><canvas id="pieChart"></canvas></div>
-            <div class="chart-container"><canvas id="doughnutChart"></canvas></div>
+            <div class="col-md-6 chart-container"><canvas id="barChart"></canvas></div>
+            <div class="col-md-6 chart-container"><canvas id="lineChart"></canvas></div>
+            <div class="col-md-6 chart-container"><canvas id="pieChart"></canvas></div>
+            <div class="col-md-6 chart-container"><canvas id="doughnutChart"></canvas></div>
         </div>
 
         <div class="exercise-section" style="margin-top: 50px; text-align: center;">
             <h3>Exercise Needed to Burn This Food</h3>
             <div id="exerciseInfo" style="margin-top: 20px;"></div>
         </div>
-    </div>
+
+        </div>
 </body>
 
 @section Scripts {

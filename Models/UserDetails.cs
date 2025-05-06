@@ -18,7 +18,6 @@ namespace GutMeal_Website.Models
 
         public UserDetails()
         {
-            // Initialize default values for range inputs
             StressLevel = 1;
             SleepQuality = 1;
         }

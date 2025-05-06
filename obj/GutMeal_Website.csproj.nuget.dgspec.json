@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\test\\Desktop\\Classes\\App Development\\Final Project\\GutMeal_Website.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\GutMeal_Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\test\\Desktop\\Classes\\App Development\\Final Project\\GutMeal_Website.csproj": {
+    "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\GutMeal_Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\test\\Desktop\\Classes\\App Development\\Final Project\\GutMeal_Website.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\GutMeal_Website.csproj",
         "projectName": "GutMeal_Website",
-        "projectPath": "C:\\Users\\test\\Desktop\\Classes\\App Development\\Final Project\\GutMeal_Website.csproj",
-        "packagesPath": "C:\\Users\\test\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\test\\Desktop\\Classes\\App Development\\Final Project\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\GutMeal_Website.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\test\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

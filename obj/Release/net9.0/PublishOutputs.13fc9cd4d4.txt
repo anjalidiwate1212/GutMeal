@@ -1,0 +1,7 @@
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\GutMeal_Website.exe
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\appsettings.json
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\GutMeal_Website.dll
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\GutMeal_Website.deps.json
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\GutMeal_Website.runtimeconfig.json
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\PubTmp\Out\GutMeal_Website.pdb

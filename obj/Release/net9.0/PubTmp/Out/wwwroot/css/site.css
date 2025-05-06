@@ -1,0 +1,114 @@
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url('/images/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(240, 242, 245, 0.6);
+    background-blend-mode: overlay;
+    min-height: 100vh;
+}
+
+
+.content-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meal-plan-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.meal-plan {
+    flex: 1 1 260px;
+    max-width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.meal-plan:hover {
+    transform: translateY(-5px);
+}
+
+
+    .meal-plan img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .meal-plan h3 {
+        margin-top: 15px;
+        color: #333;
+    }
+
+    .meal-plan p {
+        color: #666;
+    }
+
+.meal-items {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+    .meal-items ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .meal-items ul li {
+            color: #333;
+            font-weight: 600;
+            padding: 5px 0;
+        }
+
+.info-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
