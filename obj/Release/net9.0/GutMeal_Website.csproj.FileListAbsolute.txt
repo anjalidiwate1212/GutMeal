@@ -18,16 +18,11 @@ C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\GutMeal_Website.sou
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\scopedcss\bundle\GutMeal_Website.styles.css
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\scopedcss\projectbundle\GutMeal_Website.bundle.scp.css
-C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\phj3mxae06-x2v073ponk.gz
-C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\thx1ytbnw3-7selr87r2h.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\fq676dabh6-mcsxdkse7k.gz
-C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\a7fpsqf8ah-bl6w6wfrt3.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\04nljmae2z-zynrmsf3bq.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\nz1zbqpg27-fwlpr3fmq7.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\cb34wtpdk2-28dz62cs7d.gz
-C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\u7q8q2lgtk-d7d0qeevf6.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\7kxlqkg1c8-erv9eynd6r.gz
-C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\zibmvi546v-a21abl9ph7.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\yvs5v9qo28-61n19gt1b8.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\fq4w6lvu6b-3q05irbylg.gz
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\l7kb62n0h3-xtxxf3hu2r.gz
@@ -104,3 +99,8 @@ C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\refint\GutMeal_Webs
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\GutMeal_Website.pdb
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\GutMeal_Website.genruntimeconfig.cache
 C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\ref\GutMeal_Website.dll
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\phj3mxae06-0x3s8x2q6s.gz
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\thx1ytbnw3-m2pssjbcml.gz
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\a7fpsqf8ah-u0gmlfh6sc.gz
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\u7q8q2lgtk-t2nq73sws7.gz
+C:\Users\DELL\Desktop\USF\App_Dev\GutMeal\obj\Release\net9.0\compressed\zibmvi546v-kt0724djxq.gz

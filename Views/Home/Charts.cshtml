@@ -21,26 +21,26 @@
                 <h4>Enter up to 3 foods and quantity (grams):</h4>
                 <div id="foodInputs" class="container">
                     <div class="row mb-2 justify-content-center">
-                    <div class="col-md-6 mb-2">
+                    <div class="col-md-4">
                             <input type="text" class="form-control food-name" placeholder="Food 1" />
                         </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
                     <div class="row mb-2 justify-content-center">
-                    <div class="col-md-6 mb-2">
+                    <div class="col-md-4">
                             <input type="text" class="form-control food-name" placeholder="Food 2" />
                         </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
                     <div class="row mb-2 justify-content-center">
-                    <div class="col-md-6 mb-2">
+                    <div class="col-md-4">
                             <input type="text" class="form-control food-name" placeholder="Food 3" />
                         </div>
-                    <div class="col-md-4 mb-2">
+                    <div class="col-md-2">
                             <input type="number" class="form-control food-qty" placeholder="Quantity (g)" />
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             </div>
                             <p>Loading data, please wait...</p>
                         </div>`;
-                    document.querySelector('.info-section').appendChild(spinner);
+                    document.querySelector('.info-section').prepend(spinner);
                 }
             }
 

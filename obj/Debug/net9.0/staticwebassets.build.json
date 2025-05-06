@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H7kUFJGAZTO5eRMNrfdDSfko+rC0Ev/hfHoDXYluqmA=",
+  "Hash": "UqtltwTvFfVFN1cQXZifXjFsoSclQWLrH8LwHlsGS1E=",
   "Source": "GutMeal_Website",
   "BasePath": "_content/GutMeal_Website",
   "Mode": "Default",
@@ -1193,12 +1193,12 @@
       "OriginalItemSpec": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-dpsarrw8ts.gz",
+      "Identity": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-969lp1f6te.gz",
       "SourceId": "GutMeal_Website",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/GutMeal_Website",
-      "RelativePath": "css/charts#[.{fingerprint=dpsarrw8ts}]?.css.gz",
+      "RelativePath": "css/charts#[.{fingerprint=969lp1f6te}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1207,8 +1207,8 @@
       "RelatedAsset": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\css\\charts.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "gj2l5dzpnb",
-      "Integrity": "HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0=",
+      "Fingerprint": "jlq6x5uf0r",
+      "Integrity": "J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\css\\charts.css"
@@ -1585,8 +1585,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dpsarrw8ts",
-      "Integrity": "Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc=",
+      "Fingerprint": "969lp1f6te",
+      "Integrity": "TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\charts.css"
@@ -3656,13 +3656,13 @@
       ]
     },
     {
-      "Route": "css/charts.css",
-      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-dpsarrw8ts.gz",
+      "Route": "css/charts.969lp1f6te.css",
+      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-969lp1f6te.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001436781609"
+          "Quality": "0.001432664756"
         }
       ],
       "ResponseHeaders": [
@@ -3672,19 +3672,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "695"
+          "Value": "697"
         },
         {
           "Name": "ETag",
-          "Value": "\"HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0=\""
+          "Value": "\"J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -3700,18 +3700,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc=\""
+          "Value": "W/\"TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "969lp1f6te"
+        },
+        {
+          "Name": "label",
+          "Value": "css/charts.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc="
+          "Value": "sha256-TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0="
         }
       ]
     },
     {
-      "Route": "css/charts.css",
+      "Route": "css/charts.969lp1f6te.css",
       "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\css\\charts.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3721,7 +3729,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1927"
+          "Value": "1931"
         },
         {
           "Name": "Content-Type",
@@ -3729,121 +3737,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc=\""
+          "Value": "\"TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc="
-        }
-      ]
-    },
-    {
-      "Route": "css/charts.css.gz",
-      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-dpsarrw8ts.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "695"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0="
-        }
-      ]
-    },
-    {
-      "Route": "css/charts.dpsarrw8ts.css",
-      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-dpsarrw8ts.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001436781609"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "695"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dpsarrw8ts"
+          "Value": "969lp1f6te"
         },
         {
           "Name": "label",
@@ -3851,13 +3759,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc="
+          "Value": "sha256-TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0="
         }
       ]
     },
     {
-      "Route": "css/charts.dpsarrw8ts.css",
-      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\css\\charts.css",
+      "Route": "css/charts.969lp1f6te.css.gz",
+      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-969lp1f6te.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3866,7 +3774,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1927"
+          "Value": "697"
         },
         {
           "Name": "Content-Type",
@@ -3874,56 +3782,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc=\""
+          "Value": "\"J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dpsarrw8ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/charts.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Lwn0GwsN7HXNUmHx63pDX/AQeJO27kWvxMNA+YZ2MRc="
-        }
-      ]
-    },
-    {
-      "Route": "css/charts.dpsarrw8ts.css.gz",
-      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-dpsarrw8ts.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "695"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 05 May 2025 17:00:28 GMT"
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3941,7 +3804,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dpsarrw8ts"
+          "Value": "969lp1f6te"
         },
         {
           "Name": "label",
@@ -3949,7 +3812,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HOl/rtl0LdVXO+05LYNHPIoWdKqJgw//IAsRI7xJBm0="
+          "Value": "sha256-J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/charts.css",
+      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-969lp1f6te.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001432664756"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "697"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0="
+        }
+      ]
+    },
+    {
+      "Route": "css/charts.css",
+      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\wwwroot\\css\\charts.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TxEp9qZLbYie0TKXtcCWANNNIl/aRK73TLToH0hKAm0="
+        }
+      ]
+    },
+    {
+      "Route": "css/charts.css.gz",
+      "AssetFile": "C:\\Users\\DELL\\Desktop\\USF\\App_Dev\\GutMeal\\obj\\Debug\\net9.0\\compressed\\thx1ytbnw3-969lp1f6te.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "697"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 04:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-J2GNQppxyRMCO2su+hJGpsd58ol1ZYbWf78XWz2MLjQ="
         }
       ]
     },
