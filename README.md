@@ -1,7 +1,7 @@
 **GutMeal**
 
   GutMeal is a personalized meal recommendation platform that helps users discover gut-friendly and goal-oriented meal plans based on their dietary preferences and nutritional needs. 
-  By allowing users to input up to three food items, the system fetches real-time nutritional data via the Open Food Facts API and visualizes it using interactive charts. 
+  By allowing users to input up to three food items, the system fetches real-time nutritional data via the Open Food Facts API and visualizes it using interactive charts.
   The core focus is to recommend scientifically backed meal plans—such as keto, low-FODMAP, or high-fiber diets—that align with users’ health goals like improved digestion, metabolic balance, or reduced inflammation.
 
 
