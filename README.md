@@ -58,13 +58,13 @@
 
   Entity	  Functionality
   
-  MealPlan	User can add(using form), edit, delete meal plans
+  MealPlan-	User can add(using form), edit, delete meal plans
   
-  FoodItem	Linked to API, user can input meals and food name for marconutrients output
+  FoodItem-	Linked to API, user can input meals and food name for marconutrients output
   
-  Tracking	Users can submit food + quantity , view charts 
+  Tracking-	Users can submit food + quantity , view charts 
   
-  UserPrefs	Preferences can be saved/updated per user
+  UserPrefs-	Preferences can be saved/updated per user
   
   Front-end: Razor Views and HTML forms
   
