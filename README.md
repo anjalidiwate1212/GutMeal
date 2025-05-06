@@ -9,8 +9,10 @@
 **The project utilizes the following external APIs:**
 
   Open Food Facts API
+  
   https://world.openfoodfacts.org/cgi/search.pl
   Used to fetch nutrition data (calories, fat, carbs, protein, fiber) based on user-inputted food names.
+  
   Example call:
   https://world.openfoodfacts.org/cgi/search.pl?search_terms=banana&search_simple=1&action=process&json=1
 
